@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SEGAFAN001</title>
+    <link rel="icon" type="image/x-icon" href="assets/logo.png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+</head>
+
+<body class="bg-gray">
+    <div class="container">
+        <div class="row justify-content-center mb-3">
+            <div class="col-12">
+                <img src="assets/segafan001-logo.png" alt="SEGAFAN001" class="img-fluid">
+            </div>
+        </div>
+
+        <div class="row justify-content-center mb-3">
+            <div class="col-12">
+                <div class="nes-balloon from-left is-dark">
+                    <p id="greeting">Loading...</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-md-4 mb-3 d-flex">
+                <div class="nes-container is-dark flex-column d-flex h-100">
+                    <img src="assets/discord.png" alt="Discord" class="img-title">
+                    <p class="card-text flex-grow-1">Don't miss out on stream updates and whatnot by joining the
+                        Official Discord server!</p>
+                    <a href="https://discord.gg/WEQ6jT4qyw" class="nes-btn mt-auto">Join</a>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-3 d-flex">
+                <div class="nes-container is-dark flex-column d-flex h-100">
+                    <img src="assets/about.png" alt="About" class="img-title">
+                    <p class="card-text flex-grow-1">See my twitch about page to find out who this mysterious twitch
+                        streamer is!</p>
+                    <a href="https://www.twitch.tv/segafan001/about" class="nes-btn mt-auto">Go to Twitch</a>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-3 d-flex">
+                <div class="nes-container is-dark flex-column d-flex h-100">
+                    <img src="assets/twitch.png" alt="Twitch" class="img-title">
+                    <p class="card-text flex-grow-1">Obviously you want to watch me on twitch, click the button below to
+                        go there!</p>
+                    <a href="https://www.twitch.tv/segafan001" class="nes-btn mt-auto">Go to Twitch</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="footer text-center">
+                    <p id="copyright">&copy; SEGAFAN001. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <script>
+        function updateGreeting() {
+            const now = new Date();
+            const hour = now.getHours();
+            let greeting;
+
+            if (hour < 12) {
+                greeting = "Good morning. Thou hast had a good night's sleep, I hope.";
+            } else if (hour < 18) {
+                greeting = "Good afternoon. Thou hast had a good morning, I hope.";
+            } else {
+                greeting = "Good evening. Thou hast had a good day, I hope.";
+            }
+
+            document.getElementById('greeting').textContent = greeting;
+        }
+
+        updateGreeting();
+    </script>
+    <script>
+        // Get the current year and update the copyright text
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const currentYear = new Date().getFullYear();
+            const copySymbol = '\u00A9'; // Unicode for ©
+            document.getElementById('copyright').textContent = `${copySymbol} ${currentYear} SEGAFAN001. All rights reserved.`;
+        });
+    </script>
+</body>
+
+</html>

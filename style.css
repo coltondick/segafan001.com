@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Bakbak+One&family=Roboto&display=swap');
+
+/* Root Variables */
+::root {
+    --header: #302E82;
+}
+
+/* Discord Button Styles */
+.btn-discord {
+    color: #000000;
+    background-color: #D8D8B9;
+    border-color: #720054;
+    border-width: 5px;
+}
+
+.btn-discord:hover {
+    color: #ffffff;
+    background-color: #720054;
+    border-color: #D8D8B9;
+}
+
+/* Card Styles */
+.card {
+    border-width: 4px;
+    border-radius: 0px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.bg-card {
+    background-color: #3BFFE0;
+}
+
+/* Background Styles */
+.bg-gray {
+    background-color: #354271;
+    background-image: url("assets/background.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.big-text {
+    color: #ffffff;
+    font-size: 36px;
+}
+
+.bg-grey {
+    background-color: #484848;
+}
+
+.bg-dark-blue {
+    background-color: #2E1B5B;
+}
+
+/* Card Text Styles */
+.card-text {
+    color: #ffffff;
+    font-size: 16px;
+    flex-grow: 1;
+}
+
+body {
+    background-color: #DAAC80;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.head {
+    font-family: 'Bakbak One', cursive;
+    padding-top: 60px;
+    color: #FFFFFF;
+    line-height: 1.3;
+    text-align: center;
+}
+
+.subtext {
+    padding-bottom: 200px;
+    color: #ffffff;
+    line-height: 1.3;
+    text-align: center;
+}
+
+.container {
+    max-width: 1000px;
+}
+
+.footer {
+    width: 100%;
+}
+
+.navbar-dark {
+    background-color: var(--header);
+}
+
+.nav-head {
+    font-family: 'Hammersmith One', sans-serif;
+    font-size: 2rem;
+    display: none;
+}
+
+.active {
+    color: rgb(166 168 253);
+}
+
+li {
+    font-family: 'Josefin Sans', sans-serif;
+    padding-top: 10px;
+}
+
+.nav-link {
+    background-color: var(--background);
+    padding-right: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+@media (min-width: 992px) {
+    .nav-head {
+        display: block;
+    }
+
+    .nav-link {
+        background-color: transparent;
+        text-align: left;
+    }
+}
+
+/* Responsive Image */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive Image */
+.img-title {
+    max-width: 100%;
+
+    height: 75px !important;
+}
+
+/* Twitch Embed Responsive */
+.embed-responsive {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+}
+
+.embed-responsive::before {
+    display: block;
+    content: "";
+}
+
+.embed-responsive-16by9::before {
+    padding-top: 56.25%;
+}
+
+.embed-responsive-item,
+.embed-responsive embed,
+.embed-responsive iframe,
+.embed-responsive object,
+.embed-responsive video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Flexbox for card bodies to make content of equal height */
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ensuring the card content grows and fills the space */
+.card-text {
+    flex-grow: 1;
+}
+
+/* Align buttons at the bottom of the card */
+.card-body a {
+    margin-top: auto;
+}
+
+.balloon-padding {
+    padding-bottom: 30px; /* Adjust the padding as needed */
+}
+
+/* Specific selector to remove padding inside nes-container */
+.nes-container.twitch-container {
+    padding: 0 !important;
+}
+
+/* Custom CSS for embed-responsive to ensure it fills nes-container */
+.twitch-container .embed-responsive {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0; /* Removed padding for full width */
+    overflow: hidden;
+}
+
+.twitch-container .embed-responsive-16by9::before {
+    padding-top: 56.25%; /* Maintain aspect ratio */
+}
+
+.twitch-container .embed-responsive-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
