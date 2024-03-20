@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <script src=" https://cdn.jsdelivr.net/npm/polyfill-library@4.8.0/lib/index.min.js "></script>
 </head>
 
 <body class="bg-gray">
@@ -45,7 +46,23 @@
                     <img src="assets/about.png" alt="About" class="img-title">
                     <p class="card-text flex-grow-1">See my twitch about page to find out who this mysterious twitch
                         streamer is!</p>
-                    <a href="https://www.twitch.tv/segafan001/about" class="nes-btn mt-auto">Go to Twitch</a>
+                    <!-- <a href="https://www.twitch.tv/segafan001/about" class="nes-btn mt-auto">Go to Twitch</a> -->
+                    <button type="button" class="nes-btn" onclick="showAndCenterDialog('dialog-about');">
+                        About me
+                    </button>
+                    <dialog class="nes-dialog" id="dialog-about">
+                        <form method="dialog">
+                            <p class="title">About me</p>
+                            <p>Hey, the names Walter, this is a redeem channel, I play what you pick, mostly all 80s and
+                                90s stuff. I stream twice a day every day for at least 3 hours per stream. Feel free to
+                                jump in and chat
+                                about
+                                whatever... Humor can get pretty dark and insane in here so fair warning!!</p>
+                            <menu class="dialog-menu">
+                                <button class="nes-btn">Ok</button>
+                            </menu>
+                        </form>
+                    </dialog>
                 </div>
             </div>
             <div class="col-12 col-md-4 mb-3 d-flex">
@@ -99,6 +116,34 @@
             const copySymbol = '\u00A9'; // Unicode for ©
             document.getElementById('copyright').textContent = `${copySymbol} ${currentYear} SEGAFAN001. All rights reserved.`;
         });
+    </script>
+    <script>
+        var dialogAbout = document.getElementById('dialog-about');
+        dialogPolyfill.registerDialog(dialogAbout);
+
+        function showAndCenterDialog(dialogId) {
+            var dialog = document.getElementById(dialogId);
+            dialog.showModal();
+
+            // Delay centering until the next frame
+            requestAnimationFrame(function () {
+                centerDialog(dialog);
+            });
+        }
+
+        function centerDialog(dialog) {
+            var rect = dialog.getBoundingClientRect();
+            var windowHeight = window.innerHeight;
+            var windowWidth = window.innerWidth;
+
+            dialog.style.position = 'fixed';
+            dialog.style.top = '50%';
+            dialog.style.left = '50%';
+            dialog.style.transform = 'translate(-50%, -50%)';
+        }
+
+
+
     </script>
 </body>
 
